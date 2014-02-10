@@ -7,7 +7,7 @@
     <version>0.5.0</version>
   </parent>
 
-  <artifactId>elasticsearch-index-batch</artifactId>
+  <artifactId>batch-tools-elasticsearch</artifactId>
   <packaging>jar</packaging>
 
   <name>Generic ElasticSearch Indexer Batch</name>

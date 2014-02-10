@@ -22,7 +22,7 @@
 
 	<modules>
             <module>batch-tools-core</module>
-	    <module>batch-tools-elasticsearch</module>
+	    <module>elasticsearch-index-batch</module>
 	</modules>
 	
 	<licenses>
