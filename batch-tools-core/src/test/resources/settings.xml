@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <comment>Properties for the batch</comment>
+
+<!-- *********************************************************************** -->
+<!-- General settings                                                        -->
+<!-- *********************************************************************** -->
+
+    <entry key="basePackage">com.github.nicosensei.batch</entry>
+    
+    <entry key="BatchExecutor.log.folder">/tmp/textbatch/logs</entry>
+    <entry key="BatchExecutor.log.dateLayout">yyyy-MM-dd_HH:mm</entry>
+    <entry key="BatchExecutor.log.pattern">%d{yyy/MM/dd HH:mm:ss}: %m%n</entry>
+    <entry key="ResultLogger.folder">/tmp/textbatch/results/</entry>
+    <entry key="ResultLogger.ext">.txt</entry>
+    <entry key="Batch.sleepInSeconds">1</entry>
+    <entry key="BatchState.delayInSeconds">60</entry>
+
+    <entry key="input.InputFileReader.encoding">UTF-8</entry>
+
+</properties>
