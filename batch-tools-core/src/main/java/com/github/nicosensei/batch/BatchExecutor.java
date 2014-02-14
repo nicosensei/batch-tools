@@ -285,6 +285,8 @@ public final class BatchExecutor {
         long timeElapsed = System.currentTimeMillis() - initTime;
         instance.logInfo("Time elapsed: " + TimeFormatter.formatDuration(timeElapsed));
         LogManager.shutdown();
+        
+        instance = null;
     }
 
 }
