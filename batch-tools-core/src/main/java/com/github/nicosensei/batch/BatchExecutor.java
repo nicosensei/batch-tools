@@ -221,8 +221,13 @@ public final class BatchExecutor {
 
     public synchronized void logError(Throwable t) {
         String msg = t.getLocalizedMessage();
-        logger.mainLogger.warn(msg);
+        logger.mainLogger.error(msg);
         logger.errorLogger.error(msg, t);
+    }
+    
+    public synchronized void logError(String errorDesc) {
+        logger.mainLogger.error(errorDesc);
+        logger.errorLogger.error(errorDesc);
     }
 
     public File getLogFolder() {

@@ -27,9 +27,14 @@ public abstract class BasicBatchState extends AbstractBatchState {
 
     @Override
     public void logStatus() {
-        BatchExecutor.getInstance().logInfo(getUnitsProcessed() + "/" + getUnitsToProcess()
-        + " lines processed ("
-        + PERCENTAGE.format(getCompletionPercentage()) + "%).");
+    	StringBuilder sb = new StringBuilder()
+    		.append(Long.toString(getUnitsProcessed()))
+    		.append("/")
+    		.append(Long.toString(getUnitsToProcess()))
+    		.append(" lines processed (")
+    		.append(PERCENTAGE.format(getCompletionPercentage()))
+    		.append("%).");
+        BatchExecutor.getInstance().logInfo(sb.toString());
 
     }
 
