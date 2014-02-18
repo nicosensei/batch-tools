@@ -12,7 +12,7 @@
 
         <groupId>com.github.nicosensei.batch</groupId>
 	<artifactId>batch-tools</artifactId>
-	<version>0.5.1</version>
+	<version>0.6.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Batch tools</name>
