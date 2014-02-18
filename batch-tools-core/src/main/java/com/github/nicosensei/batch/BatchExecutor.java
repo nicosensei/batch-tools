@@ -225,9 +225,15 @@ public final class BatchExecutor {
         logger.errorLogger.error(msg, t);
     }
     
-    public synchronized void logError(String errorDesc) {
-        logger.mainLogger.error(errorDesc);
-        logger.errorLogger.error(errorDesc);
+    public synchronized void logError(String fullMessage) {
+        logError("", fullMessage);
+    }
+    
+    public synchronized void logError(String shortMessage, String fullMessage) {
+        if (shortMessage!= null && !shortMessage.isEmpty()) {
+        	logger.mainLogger.error(shortMessage);
+        }
+        logger.errorLogger.error(fullMessage);
     }
 
     public File getLogFolder() {
