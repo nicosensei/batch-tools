@@ -25,5 +25,14 @@ public class IndexCreationFailedException extends BatchException {
 			new String[] { indexName }, 
 			Level.FATAL);
 	}
+	
+	public IndexCreationFailedException(final String indexName, final Throwable cause) {
+		super(
+			"CREATE_INDEX_FAILED", 
+			"Failed to create index {0}", 
+			new String[] { indexName }, 
+			Level.FATAL,
+			cause);
+	}
 
 }
