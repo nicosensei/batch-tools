@@ -2,7 +2,6 @@ package com.github.nicosensei.batch.elasticsearch;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -171,7 +170,9 @@ extends Batch<I, W> {
 		 try {
 			 CreateIndexResponse resp = getElasticSearchClient().admin().indices()
 					 .prepareCreate(indexName)
-					 .setSettings(readTextFile(new FileInputStream(getIndexSettingsJsonPath())))
+					 .setSettings(readTextFile(
+							 IndexBatch.class.getResourceAsStream(getIndexSettingsJsonPath()))
+							 .toString())
 					 .get();
 			 if (!resp.isAcknowledged()) {
 				 throw new IndexCreationFailedException(getIndexName());
@@ -196,7 +197,8 @@ extends Batch<I, W> {
 			 try {
 				 PutMappingResponse resp = client.admin().indices().preparePutMapping(indexName)
 						 .setType(docType)
-						 .setSource(readTextFile(new FileInputStream(mappingSource)).toString())
+						 .setSource(readTextFile(
+								 IndexBatch.class.getResourceAsStream(mappingSource)).toString())
 						 .get();
 				 if (!resp.isAcknowledged()) {
 					 throw new MappingCreationFailedException(indexName, docType);
